@@ -18,7 +18,6 @@ unsigned long T;
 
 const int SW1 = 35;
 const int SW2 = 34;
-const int LED = 25;
 
 enum Estados { MONITOR, ESPERA1, ENTRETIEMPO, CONFIG, SW1L, SW2L, ESPERA2 };
 Estados estadoActual = MONITOR;
@@ -32,7 +31,6 @@ float temperatura = 0;
 void setup() {
   pinMode(SW1, INPUT_PULLUP);
   pinMode(SW2, INPUT_PULLUP);
-  pinMode(LED, OUTPUT);
 
   preferences.begin("my-app", false);
   umbral = preferences.getInt("umbral", 0); 
@@ -104,12 +102,6 @@ void loop() {
         preferences.putInt("umbral", umbral);
         estadoActual= MONITOR;
       }
-
-  if (temperatura > umbral) {
-    digitalWrite(LED, HIGH);
-  } else {
-    digitalWrite(LED, LOW);
-  }
 
 }
 }
