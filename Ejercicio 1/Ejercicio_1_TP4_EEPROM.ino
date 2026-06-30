@@ -1,4 +1,4 @@
-// Grupo 1 -- GARELIK,GONZALEZ,PRE
+// Grupo 10 -- GARELIK,GONZALEZ,PRE
 
 #include <Preferences.h>
 #include <Wire.h>
